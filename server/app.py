@@ -26,7 +26,7 @@ def predict():
     img = Image.open(file).convert('RGB')
 
     # Resize to the same size your model was trained on
-    img = img.resize((224, 224))
+    img = img.resize((28, 28))
 
     # Convert to numpy array and normalize
     img_array = np.array(img) / 255.0
