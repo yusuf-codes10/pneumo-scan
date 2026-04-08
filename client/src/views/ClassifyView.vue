@@ -39,7 +39,7 @@ const  sendXray = async (file) => {
 
 <template>
   <div class="min-h-screen flex bg-[#F8FAFC]">
-    <div>
+    <div class="bg-red-500">
         <input type="file" accept="image/*" @change="handleFile" />
     </div>
 
