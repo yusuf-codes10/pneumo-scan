@@ -1,8 +1,16 @@
 <script setup>
 
 
-const clickButton = () => {
-  console.log('button has been clicked');
+const sendImage = async () => {
+  const API = 'http://127.0.0.1:5000/predict'
+
+  try {
+    const response = await fetch(API)
+    const data = await response.json()
+    console.log(data);
+  } catch (err) {
+    console.log(err.message);
+  }
 }
 </script>
 
@@ -14,7 +22,7 @@ const clickButton = () => {
 
       <!-- Upload Button -->
       <button
-        @click="clickButton"
+        @click="sendImage"
         class="px-10 py-3 bg-linear-to-r from-blue-600 to-indigo-500
                hover:from-blue-700 hover:to-indigo-600
                text-white text-lg font-medium cursor-pointer
