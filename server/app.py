@@ -10,7 +10,12 @@ app = Flask(__name__)
 CORS(app)
 
 # Load your model once
-model = load_model('model/cnn_xray_v1.keras')  # or .h5
+model = load_model('models/cnn_xray_v1.h5')  # or .h5
+
+# Example classes
+classes = ['NORMAL', 'PNEUMONIA']
+
+
 
 @app.route('/predict', methods=['GET'])
 def send_prediction():
