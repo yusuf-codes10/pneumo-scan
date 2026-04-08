@@ -1,3 +1,7 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # 0=all, 1=info, 2=warning, 3=error
+
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS          # ← add this
 from keras.models import load_model
