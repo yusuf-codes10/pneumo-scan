@@ -16,7 +16,7 @@ const sendImage = async () => {
   }
 }
 
-async function handleFile(event) {
+const handleFile = async (event) => {
   const file = event.target.files[0];
   if (!file) return;
   await sendXray(file);
