@@ -9,7 +9,7 @@
       <button
         class="block px-2 py-1 mx-auto w-20 bg-[#2563EB] hover:bg-[#366bde] text-white cursor-pointer border rounded-2"
       >
-        Predict
+       <RouterLink :to="{name: 'Classify'}">Predict</RouterLink>
       </button>
     </div>
   </div>
