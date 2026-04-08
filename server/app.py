@@ -55,8 +55,8 @@ def predict():
 
 
 
-@app.route('/predict', methods=['GET'])
-def send_prediction():
+@app.route('/check', methods=['GET'])
+def check():
     return '{Your request has been sent}'
 
 if __name__ in "__main__":
