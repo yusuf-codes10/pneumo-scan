@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from "vue";
+// import { ref } from "vue";
 
-const message = ref('')
+// const message = ref('')
 
 
 const sendImage = async () => {
@@ -15,12 +15,32 @@ const sendImage = async () => {
     console.log(err.message);
   }
 }
+
+async function handleFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  await sendXray(file);
+}
+
+const  sendXray = async (file) => {
+  const formData = new FormData();
+  formData.append('file', file); // 'file' must match request.files['file'] in Flask
+
+  const response = await fetch('http://localhost:5000/predict', {
+    method: 'POST',
+    body: formData,
+    // ⚠️ Do NOT set Content-Type manually — browser sets it with the boundary automatically
+  });
+
+  const result = await response.json();
+  console.log(result.prediction, result.confidence);
+}
 </script>
 
 <template>
   <div class="min-h-screen flex bg-[#F8FAFC]">
     <div>
-      <p>{{ message }}</p>
+        <input type="file" accept="image/*" @change="handleFile" />
     </div>
 
     <!-- Card -->
