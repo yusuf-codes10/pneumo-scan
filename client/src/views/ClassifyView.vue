@@ -1,17 +1,23 @@
 <script setup>
+
+
+const clickButton = () => {
+  console.log('button has been clicked');
+}
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-[#F8FAFC]">
+  <div class="min-h-screen flex bg-[#F8FAFC]">
 
     <!-- Card -->
     <div class="w-125 h-87.5 bg-white rounded-3xl shadow-xl flex flex-col items-center justify-center text-center p-8">
 
       <!-- Upload Button -->
       <button
+        @click="clickButton"
         class="px-10 py-3 bg-linear-to-r from-blue-600 to-indigo-500
                hover:from-blue-700 hover:to-indigo-600
-               text-white text-lg font-medium
+               text-white text-lg font-medium cursor-pointer
                rounded-full shadow-md transition duration-200"
       >
         Upload Image
