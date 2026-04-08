@@ -6,7 +6,7 @@ CORS(app)
 
 @app.route('/predict', methods=['GET'])
 def send_prediction():
-    return '<h1>Nothing to send</h1>'
+    return '{Your request has been sent}'
 
 if __name__ in "__main__":
     app.run(debug=True)

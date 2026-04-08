@@ -1,4 +1,7 @@
 <script setup>
+import { ref } from "vue";
+
+const message = ref('')
 
 
 const sendImage = async () => {
@@ -16,6 +19,9 @@ const sendImage = async () => {
 
 <template>
   <div class="min-h-screen flex bg-[#F8FAFC]">
+    <div>
+      <p>{{ message }}</p>
+    </div>
 
     <!-- Card -->
     <div class="w-125 h-87.5 bg-white rounded-3xl shadow-xl flex flex-col items-center justify-center text-center p-8">
